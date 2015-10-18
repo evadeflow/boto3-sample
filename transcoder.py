@@ -487,7 +487,11 @@ class AutoTranscode(object):
 
 
 if __name__ == '__main__':
+    import logging
     import sys
+
+    logging.basicConfig()
+    logging.getLogger('boto3').setLevel(logging.DEBUG)
 
     config_filepath = os.path.abspath(
         os.path.expanduser(
